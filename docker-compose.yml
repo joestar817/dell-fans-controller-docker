@@ -1,0 +1,11 @@
+version: "3"
+
+services:
+  dell-fans-controller-docker:
+    image: joestar817/dell-fans-controller-docker:latest
+    container_name: dell-fans-controller-docker
+    restart: always
+    environment:
+      HOST: 192.168.1.1
+      USERNAME: root
+      PASSWORD: password
