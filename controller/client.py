@@ -20,13 +20,13 @@ class FanController:
         temperature: int = max(self.ipmi.temperature())
         logger.info(f'Current maximum temperature: {temperature}')
 
-        if 0 < temperature < 50:
+        if 0 < temperature <= 50:
             self.set_fan_speed(10)
-        elif 50 < temperature < 55:
+        elif 50 < temperature <= 55:
             self.set_fan_speed(20)
-        elif 55 < temperature < 60:
+        elif 55 < temperature <= 60:
             self.set_fan_speed(30)
-        elif 60 < temperature < 65:
+        elif 60 < temperature <= 65:
             self.set_fan_speed(40)
         else:
             logger.info(f'Switch fan control to auto mode')
